@@ -4,7 +4,20 @@
 */
 
 function isPalindrome(str) {
+
+  str = str.toLowerCase();
+  str = str.replace(/[^a-zA-Z0-9]/g, ""); //removes any punctuation marks and spaces
+  let rts = Array.from(str).reverse();
+
+  str = Array.from(str);
+
+  for(let i = 0;i<str.length;i++){
+    if(str[i] !== rts[i]){
+      return false;
+    }
+  }
   return true;
+
 }
 
 module.exports = isPalindrome;
